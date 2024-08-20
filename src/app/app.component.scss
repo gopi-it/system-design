@@ -1,0 +1,31 @@
+.menu {
+  padding: 20px;
+  background: #0866ff;
+  color: #fff;
+}
+
+main {
+  position: relative;
+  nav {
+    position: absolute;
+    width: 200px;
+    height: 100vh;
+    border-right: 1px solid black;
+    padding: 0 20px;
+    ul {
+      list-style-type: none;
+      padding-inline-start: 5px;
+      li a {
+        text-decoration: none;
+      }
+
+      li + li {
+        margin-top: 10px;
+      }
+    }
+  }
+  div[role=main] {
+    margin-left: 200px;
+    padding: 20px 20px 20px 40px;
+  }
+}

@@ -1,0 +1,38 @@
+.element {
+  margin-top: 10px;
+  --content-color: blue;
+  --padding-color: green;
+  --border-color: yellow;
+  --margin-color: orange;
+}
+
+.tmargin {
+  height: 250px;
+  width: 250px;
+  background: var(--margin-color);
+}
+
+.tborder {
+  height: 200px;
+  width: 200px;
+  background: var(--border-color);
+}
+
+.tpadding {
+  height: 150px;
+  width: 150px;
+  background: var(--padding-color);
+}
+
+.tcontent {
+  height: 100px;
+  width: 100px;
+  background: var(--content-color);
+}
+
+.element.element--t1 {
+  --content-color: red;
+  --padding-color: black;
+  --border-color: red;
+  --margin-color: black;
+}

@@ -1,0 +1,25 @@
+<h1>Typeahead</h1>
+
+<div>
+  <input
+    class="search"
+    [ngClass]="{'search--suggest': suggestions.length}"
+    type="text"
+    placeholder="Search"
+    [(ngModel)]="query"
+    (input)="getSuggestion()"
+    (keydown.enter)="search()"
+  />
+  <div *ngIf="suggestions.length" class="suggestions">
+    <div class="item" *ngFor="let suggesion of suggestions">
+      <div class="item__name" tabindex="0" (click)="select(suggesion)">{{suggesion}}</div>
+      <div class="item__button">
+          <button (click)="deleteSuggestion(suggesion)">Del</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<ng-container *ngIf="searchResult">
+  <div class="results">Search with query: <strong>{{searchResult}}</strong></div>
+</ng-container>
