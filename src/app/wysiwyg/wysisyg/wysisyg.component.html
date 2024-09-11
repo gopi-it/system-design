@@ -1,0 +1,27 @@
+<h1>WYSIWYG</h1>
+
+<div id="editor-toolbar">
+  <button (click)="execCommand('bold')"><b>B</b></button>
+  <button (click)="execCommand('italic')"><i>I</i></button>
+  <button (click)="execCommand('underline')"><u>U</u></button>
+  <button (click)="execCommand('strikeThrough')"><s>S</s></button>
+  <button (click)="execCommand('insertOrderedList')">OL</button>
+  <button (click)="execCommand('insertUnorderedList')">UL</button>
+  <button (click)="createLink()">Link</button>
+  <button (click)="execCommand('unlink')">Unlink</button>
+  <button (click)="execCommand('removeFormat')">Clear</button>
+</div>
+
+<div id="editor" contenteditable="true">
+  <p>Start editing here...</p>
+</div>
+
+
+<div>
+  <h2>Reference</h2>
+  <ul>
+    <li>
+      <a href="https://stackoverflow.com/a/67023624" target="_blank">Stack Overflow</a>
+    </li>
+  </ul>
+</div>

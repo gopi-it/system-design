@@ -30,6 +30,23 @@ const routes: Routes = [
     loadChildren: () =>
       import('./theming/theming.module').then((m) => m.ThemingModule),
   },
+  {
+    path: 'typing',
+    loadChildren: () =>
+      import('./typing/typing.module').then((m) => m.TypingModule),
+  },
+  {
+    path: 'wysiwyg',
+    loadChildren: () =>
+      import('./wysiwyg/wysiwyg.module').then((m) => m.WysiwygModule),
+  },
+  {
+    path: 'infinte-scroll',
+    loadChildren: () =>
+      import('./infinite-scroll/infinite-scroll.module').then(
+        (m) => m.InfiniteScrollModule
+      ),
+  },
 ];
 
 @NgModule({

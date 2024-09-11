@@ -1,0 +1,16 @@
+<h1>Infinite Scroll</h1>
+
+<div style="position: sticky; top: 0;">
+  <div class="progress-bar">
+    <div class="progress-bar__loaded" [style.width]="loadedPercent"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="element" *ngFor="let element of elements"> {{element.id}}. {{element.value}}</div>
+</div>
+<div class="loading" *ngIf="loading">
+  <div class="skeleton"></div>
+  <div class="skeleton"></div>
+  <div class="skeleton"></div>
+</div>
