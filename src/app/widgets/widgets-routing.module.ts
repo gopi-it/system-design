@@ -14,6 +14,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CssCountersComponent } from './css-counters/css-counters.component';
 import { ChartsComponent } from './charts/charts.component';
 import { CssGridComponent } from './css-grid/css-grid.component';
+import { DragDropComponent } from './drag-drop/drag-drop.component';
 
 const routes: Routes = [
   {
@@ -76,6 +77,10 @@ const routes: Routes = [
       {
         path: 'grid-layout',
         component: CssGridComponent,
+      },
+      {
+        path: 'drag-drop',
+        component: DragDropComponent,
       },
     ],
   },

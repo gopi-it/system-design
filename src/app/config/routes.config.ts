@@ -56,6 +56,10 @@ export const WIDGETS_MENU: MenuRoutes[] = [
     label: 'Grid layout',
     path: 'grid-layout',
   },
+  {
+    label: 'Drag drop',
+    path: 'drag-drop',
+  },
 ].map((menu) => ({
   ...menu,
   path: `/widgets/${menu.path}`,
