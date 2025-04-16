@@ -1,0 +1,40 @@
+<h1> Charts</h1>
+
+<div class="reference">
+  <h2>Reference</h2>
+  <ul>
+    <li>
+      <a href="https://webdesign.tutsplus.com/the-best-css-and-javascript-chart-tutorials-on-tuts--cms-37142a" target="_blank">Blog</a>
+    </li>
+   </ul>
+</div>
+
+
+<div style="margin: 50px 0 100px" class="d-flex chart-wrapper" [ngClass]="{'window-opened': animate}">
+  <ul class="chart-levels">
+    <li>Expert</li>
+    <li>Advanced</li>
+    <li>Intermediate</li>
+    <li>Beginner</li>
+    <li>Novice</li>
+  </ul>
+  <ul class="d-flex justify-content-around align-items-end flex-grow-1 text-center bg-black chart-skills">
+    <li class="position-relative bg-red" data-height="80%">
+      <span class="position-absolute w-100">CSS</span>
+    </li>
+    <li class="position-relative bg-red" data-height="60%">
+      <span class="position-absolute w-100">HTML</span>
+    </li>
+    <li class="position-relative bg-red" data-height="68%">
+      <span class="position-absolute w-100">JavaScript</span>
+    </li>
+    <li class="position-relative bg-red" data-height="52%">
+      <span class="position-absolute w-100">Python</span>
+    </li>
+    <li class="position-relative bg-red" data-height="42%">
+      <span class="position-absolute w-100">Ruby</span>
+    </li>
+  </ul>
+</div>
+
+<app-donut-chart ></app-donut-chart>

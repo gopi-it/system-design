@@ -1,0 +1,26 @@
+<h1>Drawing Tool</h1>
+
+<div class="tools-cntr">
+  <div>
+    <label for="tool">Tool:</label>
+    <select id="tool" [(ngModel)]="toolSelected">
+      <option value="rectangle">Rectangle</option>
+      <option value="freehand">Freehand</option>
+      <option value="circle">Circle</option>
+      <option value="eraser">Eraser</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="drawcolor" style="margin-right: 5px">Color:</label>
+    <input type="color" id="drawcolor" name="drawcolor" [(ngModel)]="toolColor" />
+  </div>
+
+  <div>
+    <button style="margin-left: 12px" (click)="download()">Download</button>
+  </div>
+</div>
+
+<div class="drawing-cntr" >
+  <canvas #canvasEl id="drwaingCanvas" width="600" height="450"></canvas>
+</div>

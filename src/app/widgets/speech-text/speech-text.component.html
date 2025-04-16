@@ -1,0 +1,13 @@
+<h1>Speech & Text</h1>
+
+<div>
+  <button (click)="toggleRecognition()">
+    {{ isListening ? 'Stop Recording' : 'Start Recording' }}
+  </button>
+  <button [disabled]="transcript() === ''" style="margin-left: 10px" (click)="textToSpeechSetup()">Echo</button>
+</div>
+
+<div class="transcript-area">
+  <textarea disabled #textarea rows="10" cols="100" [value]="transcript()" (keydown)="updateValue(textarea.value)" placeholder="Speech & Text"></textarea>
+</div>
+

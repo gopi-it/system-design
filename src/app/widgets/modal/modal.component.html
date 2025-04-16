@@ -1,0 +1,19 @@
+<h1>Modal</h1>
+<button (click)="toggle()">Open Modal</button>
+
+<div class="modal" [ngClass]="{'active': active}">
+  <div class="modal-dialog">
+    <div>
+      <button (click)="toggle()">Close</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="reference">
+  <ul>
+    <li>
+      <a href="https://webdesign.tutsplus.com/how-to-build-flexible-modal-dialogs-with-html-css-and-javascript--cms-33500t" target="_blank">Blog</a>
+    </li>
+  </ul>
+</div>

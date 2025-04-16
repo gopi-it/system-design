@@ -1,0 +1,48 @@
+ul {
+  list-style: none;
+}
+
+.accrodian {
+  width: 500px;
+  overflow: hidden;
+
+  &__item {
+    border: 1px solid black;
+    border-bottom: 0;
+    &:last-child {
+      border-bottom: 1px solid black;
+    }
+    &:nth-child(even) {
+      background-color: #ccc;
+    }
+
+    .title {
+      padding: 5px;
+      text-align: center;
+      label {
+        display: inline-block;
+        width: calc(100% - 15px);
+        cursor: pointer;
+      }
+      input[type=radio] {
+        opacity: 0;
+      }
+    }
+
+    .content {
+      margin: 0 10px;
+      padding: 5px;
+      border-top: 1px solid black;
+      text-align: center;
+      height: 0;
+      opacity: 0;
+      transition: all 0.5s linear;
+    }
+
+    &:has(input[type=radio]:checked) .content{
+      // transform: translateX(0);
+      height: 200px;
+      opacity: 1;
+    }
+  }
+}

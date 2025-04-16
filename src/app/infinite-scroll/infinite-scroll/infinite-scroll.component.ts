@@ -21,7 +21,7 @@ interface PageResult {
 export class InfiniteScrollComponent {
   public elements: Element[] = [];
   public total = 0;
-  public load = 30;
+  public load = 15;
   public loading = false;
 
   @HostListener('window:scroll', ['$event']) scrollEvent(event: Event) {
@@ -45,7 +45,11 @@ export class InfiniteScrollComponent {
   }
 
   ngOnInit() {
-    this.loadElements();
+    this.loading = true;
+    throttle(() => {
+      this.loadElements();
+      this.loading = false;
+    });
   }
 
   private loadElements(): void {

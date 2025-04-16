@@ -1,0 +1,16 @@
+<h1>Vertical Timeline</h1>
+
+<div class="reference">
+  <h2>Reference</h2>
+  <ul>
+    <li>
+      <a href="https://webdesign.tutsplus.com/building-a-vertical-timeline-with-css-and-a-touch-of-javascript--cms-26528t" target="_blank">Blog</a>
+    </li>
+  </ul>
+</div>
+
+<ul class="timeline">
+  <li *ngFor="let el of arrList">
+    <div class="timeline__content" [ngClass]="{'timeline__content--visible': show}"></div>
+  </li>
+</ul>

@@ -1,36 +1,20 @@
 <header>
-  <div class="menu">Systems Design</div>
-</header>
-
-
-<main>
   <nav>
-    <ul>
-      <li>
-        <a routerLink="/">Infinite Scroll Carousel- CSS</a>
-      </li>
-      <li>
-        <a routerLink="/tooltip">Tooltip</a>
-      </li>
-      <li>
-        <a routerLink="/typeahead">Typeahead</a>
-      </li>
-      <li>
-        <a routerLink="/theming">Theming</a>
-      </li>
-      <li>
-        <a routerLink="/typing">Typing</a>
-      </li>
-      <li>
-        <a routerLink="/wysiwyg">WYSIWYG Editor</a>
-      </li>
-      <li>
-        <a routerLink="/infinte-scroll">Infinte Scroll</a>
+    <ul class="menu">
+      <li  *ngFor="let menu of menuItems" class="menu__item">
+        <a routerLink="/{{menu.path}}">{{menu.label}}</a>
+        <ng-container *ngIf="menu.submenu?.length">
+          <ul class="submenu">
+            <li *ngFor="let submenu of menu.submenu" class="submenu__item">
+              <a routerLink="{{submenu.path}}">{{submenu.label}}</a>
+            </li>
+          </ul>
+        </ng-container>
       </li>
     </ul>
   </nav>
+</header>
 
-  <div role="main">
-    <router-outlet></router-outlet>
-  </div>
+ <main>
+  <router-outlet></router-outlet>
 </main>

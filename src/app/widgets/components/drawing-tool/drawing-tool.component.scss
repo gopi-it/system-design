@@ -1,0 +1,12 @@
+canvas {
+  border: 1px solid rgb(33, 32, 32);
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: crosshair;
+}
+.tools-cntr {
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
+  margin: 10px 0;
+}

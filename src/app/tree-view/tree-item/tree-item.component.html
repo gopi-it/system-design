@@ -1,0 +1,20 @@
+@let children = treeNode().children;
+<section class="tree-node">
+  <div class="tree-node__info">
+    <div>{{treeNode().name}}</div>
+    @if(children) {
+      <div>
+        <button (click)="toggleView()">{{labelValue()}}</button>
+      </div>
+    }
+  </div>
+  @if(children) {
+    <div class="tree-node__children">
+    @if(expand()) {
+      @for(childNode of children; track childNode.id) {
+        <app-tree-item [treeNode]="childNode"></app-tree-item>
+      }
+    }
+    </div>
+  }
+</section>

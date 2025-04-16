@@ -1,0 +1,71 @@
+input[type='text'] {
+  padding: 8px;
+  width: 250px;
+  margin-top: 10px;
+}
+
+.container {
+  margin-top: 20px;
+  width: 250px;
+
+  .task {
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+
+    input[type="checkbox"] {
+      display: none;
+    }
+    label {
+      display: inline-block;
+      width: 50px;
+      height: 25px;
+      border: 1px solid black;
+      border-radius: 20px;
+      position: relative;
+      cursor: pointer;
+      background-color: black;
+    }
+    input[type="checkbox"]:checked +  label {
+      background-color: green;
+    }
+
+    label:before {
+      position: absolute;
+      content: '';
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      // border: 1px solid black;
+      transform: translateX(0);
+      transition: all 0.5s;
+      background-color: #ccc;
+    }
+    input[type="checkbox"]:checked +  label:before {
+      transform: translateX(100%);
+    }
+
+    // label:after {
+    //   position: absolute;
+    //   content: '';
+    //   height: 22px;
+    //   width: 22px;
+    //   top: 0;
+    //   left: 0;
+    //   transform: translateX(100%);
+    //   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/uncheck-switcher.svg);
+    // }
+
+    // input[type="checkbox"]:checked +  label:after {
+    //   transform: translateX(0%);
+    //   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/checkmark-switcher.svg);
+    // }
+  }
+}
+
+ul {
+  list-style: none;
+}

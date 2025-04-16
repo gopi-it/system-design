@@ -1,0 +1,97 @@
+.words-wrapper {
+  display: flex;
+  width: 500px;
+}
+
+.words {
+  position: relative;
+  display: inline-block;
+  color: var(--color, #000);
+  background: var(--color-bg, #ffc703);
+  width: var(--width);
+  margin-left: 8px;
+
+  span {
+    position: absolute;
+    opacity: 0;
+  }
+
+  span.current {
+    opacity: 1;
+    transform: translateY(0%);
+    animation: currenScroll 1.5s;
+  }
+
+  @keyframes currenScroll {
+    100% {
+      opacity: 0;
+      transform: translateY(-100%)
+    }
+  }
+
+  span.next {
+    opacity: 0;
+    transform: translateY(100%);
+    animation: scrollNext 1.5s ease-in-out;
+  }
+
+  @keyframes scrollNext {
+    100% {
+      opacity: 1;
+      transform: translateY(-0%)
+    }
+  }
+}
+/** Snoflakes **/
+
+.container {
+  width: 100%;
+  height: 500px;
+  background-color: #000;
+  margin-top: 30px;
+  position: relative;
+
+  .snow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    position: absolute;
+    animation: fall 5s ease-in infinite, sway 5s ease-in-out infinite;
+    left: 50%;
+  }
+
+  @keyframes fall {
+    0% {
+      opacity: 0;
+      top: 0;
+
+    }
+    50% {
+      opacity: 1;
+      top: 50%;
+    }
+    100% {
+      opacity: 1;
+      top: 100%;
+    }
+  }
+
+  @keyframes sway {
+    0% {
+      margin-left: 0;
+    }
+    25% {
+      margin-left: -50px;
+    }
+    50% {
+      margin-left: 0;
+    }
+    75% {
+      margin-left: 50px;
+    }
+    100% {
+      margin-left: 0;
+    }
+  }
+}

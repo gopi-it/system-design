@@ -1,0 +1,48 @@
+<h1>Carousel</h1>
+
+
+<h2 style="margin: 20px 0 10px 0">Slider using scroll</h2>
+<div class="container">
+  <button class="arrow arrow--right" (click)="next()">Next</button>
+  <button class="arrow arrow--left" (click)="previous()">Previous</button>
+
+  <div class="slider" #slider>
+    <div #slide style="background-color: #b03532" class="slide"></div>
+    <div style="background-color: #6a478f;" class="slide"></div>
+    <div style="background-color: #da6f2b;" class="slide"></div>
+  </div>
+</div>
+
+
+<h2 style="margin: 20px 0 10px 0">Slider using animation</h2>
+<div class="container2">
+  <button class="arrow arrow--right" (click)="nextBtnClicked()">Next</button>
+  <button class="arrow arrow--left" (click)="prevBtnClicked()">Previous</button>
+
+  <div class="slider2" #slider>
+    <div style="background-color: #b03532" class="slide2" [ngClass]="{
+      'slide2-current': setCurrentCls(1),
+      'slide2-prev': setPrevCls(1),
+      'slide2-next': setNextCls(1)
+      }">1</div>
+    <div style="background-color: #6a478f;" class="slide2" [ngClass]="{
+      'slide2-current': setCurrentCls(2),
+      'slide2-prev': setPrevCls(2),
+      'slide2-next': setNextCls(2)
+      }">2</div>
+    <div style="background-color: #da6f2b;" class="slide2" [ngClass]="{
+      'slide2-current': setCurrentCls(3),
+      'slide2-prev': setPrevCls(3),
+      'slide2-next': setNextCls(3)
+      }">3</div>
+  </div>
+</div>
+
+<div class="reference">
+  <h2>Reference</h2>
+  <ul>
+    <li>
+      <a href="https://webdesign.tutsplus.com/best-css-and-javascript-carousel-tutorials--cms-92882a" target="_blank">Blog</a>
+    </li>
+  </ul>
+</div>

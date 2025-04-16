@@ -1,0 +1,8 @@
+.tree-node {
+  margin: 10px 20px;
+  &__info {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+}

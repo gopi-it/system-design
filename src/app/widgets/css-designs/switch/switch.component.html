@@ -1,0 +1,15 @@
+<h2 style="margin-top: 30px;">Switch</h2>
+
+<form [formGroup]="toDoForm">
+  <input type="text" formControlName="taskName" placeholder="Enter task name" (keydown.enter)="addTask()"/>
+</form>
+
+<ul class="container">
+  <li class="task" *ngFor="let task of toDoItems; let i = index">
+    <div>{{i+1}}.  {{task}}</div>
+    <div>
+      <input type="checkbox" id="checkbox{{i}}"/>
+      <label for="checkbox{{i}}"></label>
+    </div>
+  </li>
+</ul>

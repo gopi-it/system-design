@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'infinite-scroll',
+    redirectTo: 'widgets',
   },
   {
     path: 'infinite-scroll',
@@ -46,6 +46,27 @@ const routes: Routes = [
       import('./infinite-scroll/infinite-scroll.module').then(
         (m) => m.InfiniteScrollModule
       ),
+  },
+  {
+    path: 'widgets',
+    loadChildren: () =>
+      import('./widgets/widgets.module').then((m) => m.WidgetsModule),
+  },
+  {
+    path: 'virtual-scroll',
+    loadChildren: () =>
+      import('./virtual-scroll/virtual-scroll.module').then(
+        (m) => m.VirtualScrollModule
+      ),
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then((m) => m.ChatModule),
+  },
+  {
+    path: 'tree-view',
+    loadChildren: () =>
+      import('./tree-view/tree-view.module').then((c) => c.TreeViewModule),
   },
 ];
 

@@ -1,0 +1,14 @@
+<h1>Slider</h1>
+
+<div class="container" [style]="{'backgroundColor': selectedColor}">
+  <div style="text-transform: uppercase;">
+    {{selectedEmoji.text}}
+  </div>
+  <div>
+    <img [src]="selectedEmoji.url" alt="emoji">
+  </div>
+  <div>
+    <input type="range" min="0" max="100" [(ngModel)]="sliderVal" (ngModelChange)="updateRating()"/>
+  </div>
+</div>
+

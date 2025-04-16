@@ -1,27 +1,14 @@
-# SystemDesign
+https://webdesign.tutsplus.com/build-a-simple-calculator-with-html-css-and-javascript--cms-107917t
+https://webdesign.tutsplus.com/tic-tac-toe-game-with-vanilla-javascript--cms-108863t
+https://webdesign.tutsplus.com/the-best-css-checkbox-hack-tutorials-on-tuts--cms-92969a
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+https://webdesign.tutsplus.com/easy-slider-carousel-with-pure-css--cms-107626t
+https://webdesign.tutsplus.com/quick-tip-using-css-counters-to-style-incremental-elements--cms-23497t --
+https://webdesign.tutsplus.com/the-best-css-and-javascript-chart-tutorials-on-tuts--cms-37142a
+https://webdesign.tutsplus.com/how-to-make-line-charts-in-pure-css--cms-108657t
+https://webdesign.tutsplus.com/how-to-draw-bar-charts-using-javascript-and-html5-canvas--cms-28561t
 
-## Development server
+https://webdesign.tutsplus.com/a-guide-to-creating-accessible-animations--cms-32038t
+https://codepen.io/sagnik-77/pen/RwLYyzJ
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+https://webdesign.tutsplus.com/flexbox-vs-css-grid-which-should-you-use--cms-30184a

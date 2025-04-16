@@ -1,0 +1,14 @@
+<h1>Chat</h1>
+
+<p>Start WS server for Chat</p>
+
+<div class="container">
+  <div class="chat-area">
+    <div class="message" [ngClass]="{'message--client': !msg.fromServer}" *ngFor="let msg of messages">{{msg.message}}</div>
+  </div>
+  <div class="send-message">
+    <input type="text" [(ngModel)]="chatMessage" placeholder="Enter message" (keydown.enter)="send()"/>
+  </div>
+</div>
+
+

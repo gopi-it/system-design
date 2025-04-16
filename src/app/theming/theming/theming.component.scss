@@ -6,6 +6,13 @@
   --margin-color: orange;
 }
 
+.element.element--t1 {
+  --content-color: red;
+  --padding-color: black;
+  --border-color: red;
+  --margin-color: black;
+}
+
 .tmargin {
   height: 250px;
   width: 250px;
@@ -30,9 +37,4 @@
   background: var(--content-color);
 }
 
-.element.element--t1 {
-  --content-color: red;
-  --padding-color: black;
-  --border-color: red;
-  --margin-color: black;
-}
+

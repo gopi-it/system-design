@@ -1,31 +1,76 @@
-.menu {
-  padding: 20px;
+nav {
   background: #0866ff;
-  color: #fff;
+  display: flex;
+  padding: 15px;
+
+  li, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  li {
+    list-style: none;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+.menu {
+  display: flex;
+  gap: 10px;
+  position: relative;
+
+  &__item a {
+    padding: 10px;
+    // border-right: 1px solid #fff;
+  }
+
+  .submenu {
+    padding: 0;
+    position: absolute;
+    background: #0866ff;
+    z-index: 100;
+    top: 50px;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+
+    // &:before {
+    //   z-index: 1;
+    //   position: inherit;
+    //   content: '';
+    //   width: 20px;
+    //   height: 20px;
+    //   background: #0866ff;
+    //   transform: rotate(45deg);
+    //   top: -10px;
+    //   max-height: 800px;
+    //   padding: 15px;
+    //   opacity: 1;
+    // }
+
+  }
+  .submenu__item + .submenu__item {
+    margin-top: 15px;
+  }
+
+  & .menu__item:has(a:hover) {
+    .submenu {
+      max-height: 800px;
+      padding: 15px;
+      opacity: 1;
+    }
+  }
 }
 
 main {
-  position: relative;
-  nav {
-    position: absolute;
-    width: 200px;
-    height: 100vh;
-    border-right: 1px solid black;
-    padding: 0 20px;
-    ul {
-      list-style-type: none;
-      padding-inline-start: 5px;
-      li a {
-        text-decoration: none;
-      }
-
-      li + li {
-        margin-top: 10px;
-      }
-    }
-  }
-  div[role=main] {
-    margin-left: 200px;
-    padding: 20px 20px 20px 40px;
-  }
+  width: 800px;
+  padding: 20px;
+  margin: 0 auto;
 }

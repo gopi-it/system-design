@@ -1,0 +1,43 @@
+.timeline {
+  background-color: #456990;
+  overflow: hidden;
+  width: 1000px;
+
+  li {
+    list-style: none;
+    width: 5px;
+    padding-top: 50px;
+    background-color: #fff;
+    margin: 0 auto;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: inherit;
+      z-index: 1;
+
+
+    }
+  }
+
+  &__content {
+    height: 200px;
+    width: 400px;
+    background-color: aquamarine;
+    opacity: 0;
+    transition: all 0.5s;
+    transform: translateX(500px);
+
+    &--visible {
+      transform: translateX(30px);
+      opacity: 1;
+    }
+  }
+}

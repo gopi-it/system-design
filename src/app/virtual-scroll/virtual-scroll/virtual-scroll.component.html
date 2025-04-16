@@ -1,0 +1,17 @@
+<h1>Virtual Scroll</h1>
+
+
+<div class="reference">
+  <h2>Reference</h2>
+  <ul>
+    <li>
+      <a href="https://evgeniiray.medium.com/infinite-scrolling-in-web-ultimate-guide-b698124b3172" target="_blank">Blog</a>
+    </li>
+  </ul>
+</div>
+
+<div class="virtual-list">
+  <div #pageTopEl class="intersection-observer absolute-center"></div>
+  <app-items #listElements class="absolute-center" *ngFor="let item of items" [item]="item"></app-items>
+  <div #pageBottomEl class="intersection-observer absolute-center"></div>
+</div>
