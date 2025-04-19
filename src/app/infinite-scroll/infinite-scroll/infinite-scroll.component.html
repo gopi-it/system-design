@@ -1,6 +1,6 @@
 <h1>Infinite Scroll</h1>
 
-<div class="reference">
+<!-- <div class="reference">
   <h2>Reference</h2>
   <ul>
     <li>
@@ -9,23 +9,48 @@
   </ul>
 </div>
 
-<h2>Demo</h2>
+<h2>Demo</h2> -->
 
-
-<div style="position: sticky; top: 0;">
-  <div class="progress-bar">
-    <div class="progress-bar__loaded" [style.width]="loadedPercent"></div>
+<div class="header">
+  <div>
+    @if(loading()) {
+    <p>Loading...</p>
+    }
+    @else {
+    Records: {{posts.length}}
+    }
   </div>
+  <div>
+    <button (click)="reload()">Reload Page</button>
+  </div>
+
 </div>
 
-<div class="container">
-  <div class="element" *ngFor="let element of elements"> {{element.id}}. {{element.value}}</div>
+<div class="content">
+  <table>
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>User ID</td>
+        <td>Title</td>
+        <td>Body</td>
+      </tr>
+    </thead>
+    <tbody>
+      @for(post of posts; track post.id) {
+      <tr>
+        <td>{{post.id}}</td>
+        <td>{{post.userId}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <div #lastRow style="height: 50px;"></div>
 </div>
-<div class="loading" *ngIf="loading">
-  <div class="skeleton"></div>
-  <div class="skeleton"></div>
-  <div class="skeleton"></div>
-</div>
+
+
 
 
 

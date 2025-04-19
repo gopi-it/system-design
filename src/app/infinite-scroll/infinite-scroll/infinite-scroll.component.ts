@@ -1,17 +1,7 @@
-import { Component, HostListener } from '@angular/core';
-import { throttle } from '../../utils/common.utils';
-
-interface Element {
-  id: number;
-  value: string;
-}
-
-interface PageResult {
-  elements: Element[];
-  total: number;
-  skip: number;
-  load: number;
-}
+import { Component, ElementRef, signal, viewChild } from '@angular/core';
+import { PostDetail } from './posts.model';
+import { PostsService } from './posts.service';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-infinite-scroll',
@@ -19,65 +9,48 @@ interface PageResult {
   styleUrl: './infinite-scroll.component.scss',
 })
 export class InfiniteScrollComponent {
-  public elements: Element[] = [];
-  public total = 0;
-  public load = 15;
-  public loading = false;
+  public skipCount = 0;
+  public loading = signal(false);
 
-  @HostListener('window:scroll', ['$event']) scrollEvent(event: Event) {
-    // innerHeight - window visible height
-    // scrollY - vertical scroll position
-    // offsetHeight - height of the element
-    const endOfPage =
-      window.innerHeight + window.scrollY >= document.body.offsetHeight;
+  public posts: PostDetail[] = [];
 
-    if (endOfPage && this.elements.length < this.total) {
-      this.loading = true;
-      throttle(() => {
-        this.loadElements();
-        this.loading = false;
+  public lastRow = viewChild.required<ElementRef>('lastRow');
+
+  constructor(private postsService: PostsService) {}
+
+  public loadData(): void {
+    this.skipCount =
+      this.posts.length === 0
+        ? 0
+        : this.skipCount + this.postsService.postsCount;
+
+    this.loading.set(true);
+    this.postsService.dataFetched$
+      .pipe(filter((status) => status))
+      .subscribe(() => {
+        this.loading.set(false);
+        const posts = this.postsService.getPosts(this.skipCount);
+        this.posts.push(...posts);
       });
-    }
+  }
+  public reload(): void {
+    window.location.reload();
   }
 
-  public get loadedPercent(): string {
-    return `${(this.elements.length / this.total) * 100}%`;
-  }
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.loadData();
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
 
-  ngOnInit() {
-    this.loading = true;
-    throttle(() => {
-      this.loadElements();
-      this.loading = false;
-    });
-  }
-
-  private loadElements(): void {
-    const result = this.getElements(this.elements.length, this.load);
-    this.elements.push(...result.elements);
-    this.total = result.total;
-  }
-
-  private getElements(skip: number, load: number): PageResult {
-    const total = 90;
-    let elements: Element[] = [];
-
-    const allResults: Element[] = [];
-    for (var i = 0; i < total; i++) {
-      const index = i + 1;
-      allResults.push({
-        id: index,
-        value: `Element ${index}`,
-      });
-    }
-
-    elements = allResults.slice(skip, load + skip);
-
-    return {
-      elements,
-      total,
-      skip,
-      load,
-    };
+    observer.observe(this.lastRow().nativeElement);
   }
 }
