@@ -60,6 +60,10 @@ export const WIDGETS_MENU: MenuRoutes[] = [
     label: 'Drag drop',
     path: 'drag-drop',
   },
+  {
+    label: 'Menu',
+    path: 'menu',
+  },
 ].map((menu) => ({
   ...menu,
   path: `/widgets/${menu.path}`,

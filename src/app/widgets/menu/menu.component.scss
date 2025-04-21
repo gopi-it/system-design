@@ -1,0 +1,34 @@
+nav {
+  display: flex;
+  gap: 8px;
+}
+
+.menu {
+  position: relative;
+  z-index: 2;
+
+  .submenu {
+    position: absolute;
+    list-style: none;
+    width: 300px;
+    transform: scale(0, 0);
+    transform-origin: top left;
+    transition: transform 0.3s ease-in-out;
+
+    &__items {
+      min-width: 200px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 8px;
+      padding: 8px;
+      border: 1px solid #000;
+    }
+  }
+
+  &:hover {
+    .submenu {
+      opacity: 1;
+      transform: scale(100%, 100%);
+    }
+  }
+}

@@ -20,6 +20,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { DonutChartComponent } from './charts/donut-chart/donut-chart.component';
 import { CssGridComponent } from './css-grid/css-grid.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { DragDropComponent } from './drag-drop/drag-drop.component';
     DonutChartComponent,
     CssGridComponent,
     DragDropComponent,
+    MenuComponent,
   ],
   imports: [
     CommonModule,

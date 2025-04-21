@@ -25,3 +25,51 @@
     </li>
   </ul>
 </div>
+
+
+
+<!-- <h1>WYSIWYG</h1>
+
+<div>
+  <button (click)="execCommand('bold')">Bold</button>
+  <button (click)="execCommand('Italic')">Italic</button>
+  <button (click)="execCommand('strikethrough')">Strikethrough</button>
+  <button (click)="execCommand('underline')">Underline</button>
+
+  <button (click)="execCommand('insertOrderedList')">OL</button>
+  <button (click)="execCommand('insertUnorderedList')">UL</button>
+
+
+  <button (click)="execCommand('formatBlock','<h1>')">H1</button>
+  <button (click)="execCommand('formatBlock','<h2>')">H2</button>
+  <button (click)="execCommand('formatBlock','<p>')">P</button>
+
+
+  <input #color type="color" (input)="execCommand('foreColor', color.value)">
+  <input #backColor type="color" (input)="execCommand('backColor', backColor.value)">
+
+
+  <button (click)="createLink()">🔗 Link</button>
+  <button (click)="execCommand('unlink')">Unlink</button>
+
+  <button (click)="insertImage()">IMG</button>
+
+  <button (click)="execCommand('removeformat')">Clear</button>
+
+</div>
+
+<div class="editor" contenteditable="true"></div>
+public execCommand(command: string, value?: any): void {
+  document.execCommand(command, false, value);
+}
+
+public createLink(): void {
+  this.execCommand('createLink', prompt('Enter the URL', 'http://'));
+}
+
+public insertImage() {
+  const url = prompt('Enter image URL:');
+  if (url) {
+    this.execCommand('insertImage', url);
+  }
+} -->

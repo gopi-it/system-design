@@ -15,6 +15,7 @@ import { CssCountersComponent } from './css-counters/css-counters.component';
 import { ChartsComponent } from './charts/charts.component';
 import { CssGridComponent } from './css-grid/css-grid.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   {
@@ -81,6 +82,10 @@ const routes: Routes = [
       {
         path: 'drag-drop',
         component: DragDropComponent,
+      },
+      {
+        path: 'menu',
+        component: MenuComponent,
       },
     ],
   },
