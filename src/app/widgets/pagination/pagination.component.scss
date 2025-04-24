@@ -1,0 +1,63 @@
+.table {
+  width: 600px;
+ }
+
+ .row {
+   display: grid;
+   grid-template-columns: 50px 1fr;
+   border-bottom: 1px solid #ccc;
+   border-left: 1px solid #ccc;
+   .cell {
+     padding: 8px;
+     min-height: 30px;
+     border-right: 1px solid #ccc;
+   }
+ }
+
+ .header {
+   .row:nth-child(1) {
+     border-top: 1px solid #ccc;
+   }
+   .cell {
+     text-align: center;
+     font-weight: 500;
+     font-size: 18px;
+   }
+ }
+
+ .pagination {
+   width: 600px;
+   display: flex;
+   align-items: center;
+   margin-top: 10px;
+
+   .controls {
+     width: 150px;
+     display: flex;
+     gap: 8px;
+     input {
+      padding: 5px;
+      height: 35px;
+       width: 40px;
+     }
+   }
+
+   .pages {
+     width: calc(100% - 200px);
+     display: flex;
+     flex-wrap: wrap;
+     gap: 6px;
+     padding: 8px;
+
+     .active {
+       a {
+         color: red;
+       }
+     }
+   }
+
+   .page-config {
+     width: 50px;
+     text-align: right;
+   }
+ }

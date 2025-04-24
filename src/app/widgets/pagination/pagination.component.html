@@ -1,0 +1,45 @@
+
+<div class="table">
+  <div class="header">
+      <div class="row">
+        <div class="cell">ID</div>
+        <div class="cell">Name</div>
+      </div>
+  </div>
+  <div class="body">
+    @for(row of displayData.data; track row.id; let i = $index) {
+      <div class="row">
+        <div class="cell">{{row.id}}</div>
+        <div class="cell">{{row.name}}</div>
+      </div>
+    }
+  </div>
+</div>
+
+<div class="pagination">
+  <div class="controls">
+    <div>
+      <button [disabled]="currentPage === 1" (click)="previousPage()">Prev</button>
+    </div>
+    <div>
+      <button [disabled]="currentPage === pageNumbers.length" (click)="nextPage()">Next</button>
+    </div>
+    <div>
+      <input type="number" [(ngModel)]="inputPage" (keydown.enter)="showPage()">
+    </div>
+  </div>
+  <div class="pages">
+    @for(page of pageNumbers; track page.pageNo) {
+      <div [ngClass]="{'active': this.currentPage === page.pageNo}">
+        <a href="javascript:void(0)" (click)="goToPage(page.pageNo)">{{page.pageNo}}</a>
+      </div>
+    }
+  </div>
+  <div class="page-config">
+    <select [(ngModel)]="rowsPerPage" (ngModelChange)="setPages()">
+      @for(opt of rowsPerPageConfig; track $index) {
+        <option>{{opt}}</option>
+      }
+    </select>
+  </div>
+</div>

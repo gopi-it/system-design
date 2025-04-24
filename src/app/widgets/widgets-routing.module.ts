@@ -16,6 +16,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { CssGridComponent } from './css-grid/css-grid.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { MenuComponent } from './menu/menu.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 const routes: Routes = [
   {
@@ -86,6 +87,10 @@ const routes: Routes = [
       {
         path: 'menu',
         component: MenuComponent,
+      },
+      {
+        path: 'pagination',
+        component: PaginationComponent,
       },
     ],
   },
