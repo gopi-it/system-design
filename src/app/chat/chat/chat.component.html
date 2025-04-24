@@ -1,6 +1,8 @@
 <h1>Chat</h1>
 
-<p>Start WS server for Chat</p>
+<p class="info-text">Start WS server for Chat</p>
+
+<button style="margin-bottom: 10px;" (click)="toggleAutoChat()">{{autoChatStatus ? 'Stop' : 'Start'}} auto chat</button>
 
 <div class="container">
   <div class="chat-area">

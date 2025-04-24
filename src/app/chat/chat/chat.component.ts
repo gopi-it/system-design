@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 
 interface Message {
   fromServer: boolean;
@@ -20,6 +20,8 @@ export class ChatComponent {
   public messages: Message[] = [];
   public chatMessage = '';
 
+  public autoChatStatus = false;
+
   ngOnInit() {
     this.socket = new WebSocket('ws://localhost:8080');
 
@@ -39,6 +41,16 @@ export class ChatComponent {
     };
   }
 
+  toggleAutoChat() {
+    if (this.autoChatStatus) {
+      this.autoChatStatus = false;
+      clearInterval(this.intervalId);
+    } else {
+      this.autoChatStatus = true;
+      this.autoSend();
+    }
+  }
+
   autoSend() {
     this.intervalId = setInterval(() => {
       this.count++;
@@ -48,7 +60,6 @@ export class ChatComponent {
   }
 
   send() {
-    console.log();
     this.socket.send(this.chatMessage);
     this.updateChat(this.chatMessage, false);
     this.chatMessage = '';
