@@ -66,15 +66,22 @@ export class ChatComponent {
   }
 
   updateChat(message: string, fromServer: boolean) {
-    this.messages.push({
+    // this.messages.push({
+    //   message,
+    //   fromServer,
+    // });
+
+    this.messages.unshift({
       message,
       fromServer,
     });
-    setTimeout(() => {
-      document.querySelector('.message:last-child')?.scrollIntoView({
-        behavior: 'smooth',
-      });
-    }, 100);
+    this.messages.splice(10);
+
+    // setTimeout(() => {
+    //   document.querySelector('.message:last-child')?.scrollIntoView({
+    //     behavior: 'smooth',
+    //   });
+    // }, 100);
   }
 
   ngOnDestroy() {

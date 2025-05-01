@@ -8,6 +8,10 @@
     border-bottom: 1px solid black;
     padding: 5px;
     overflow-y: auto;
+    overflow-x: clip;
+    display: flex;
+    flex-flow: nowrap column-reverse;
+
     .message {
       width: 250px;
       padding: 10px;
