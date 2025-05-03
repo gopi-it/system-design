@@ -68,6 +68,18 @@ export const WIDGETS_MENU: MenuRoutes[] = [
     label: 'Pagination',
     path: 'pagination',
   },
+  {
+    label: 'Shimmer UI',
+    path: 'shimmer-ui',
+  },
+  {
+    label: 'Fullscreen',
+    path: 'fullscreen',
+  },
+  {
+    label: 'Drawer',
+    path: 'drawer',
+  },
 ].map((menu) => ({
   ...menu,
   path: `/widgets/${menu.path}`,

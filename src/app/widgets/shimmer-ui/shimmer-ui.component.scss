@@ -1,0 +1,27 @@
+.shimmer {
+  width: 200px;
+  height: 100px;
+  background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
+  background-size: 300%;
+  background-position-x: 100%;
+  animation: shimmerUI 1s linear infinite ;
+}
+
+@keyframes shimmerUI {
+  to {
+    background-position-x: 0%;
+  }
+}
+
+.loaded-content {
+  width: 200px;
+  height: 100px;
+  display: grid;
+  place-content: center;
+  border: 1px solid #eee;
+  padding: 5px;
+  text-align: center;
+}
+.control {
+  margin-top: 10px;
+}

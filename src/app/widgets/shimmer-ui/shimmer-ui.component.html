@@ -1,0 +1,12 @@
+@if(showShimmer()) {
+  <div class="shimmer"></div>
+}
+@else {
+  <div class="loaded-content">
+    Hello! Content got loaded now 😃
+  </div>
+}
+
+<div class="control">
+  <button [disabled]="showShimmer()" (click)="displayShimmer()">{{ showShimmer() ? 'Showing' : 'Show' }} Shimmer</button>
+</div>

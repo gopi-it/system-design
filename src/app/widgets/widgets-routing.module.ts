@@ -17,6 +17,9 @@ import { CssGridComponent } from './css-grid/css-grid.component';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
 import { MenuComponent } from './menu/menu.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { ShimmerUiComponent } from './shimmer-ui/shimmer-ui.component';
+import { FullscreenComponent } from './fullscreen/fullscreen.component';
+import { DrawerComponent } from './drawer/drawer.component';
 
 const routes: Routes = [
   {
@@ -91,6 +94,18 @@ const routes: Routes = [
       {
         path: 'pagination',
         component: PaginationComponent,
+      },
+      {
+        path: 'shimmer-ui',
+        component: ShimmerUiComponent,
+      },
+      {
+        path: 'fullscreen',
+        component: FullscreenComponent,
+      },
+      {
+        path: 'drawer',
+        component: DrawerComponent,
       },
     ],
   },

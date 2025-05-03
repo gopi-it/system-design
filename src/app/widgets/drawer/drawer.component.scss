@@ -1,0 +1,36 @@
+.overlay {
+  inset: 0;
+  position: fixed;
+  background-color: rgba(0,0,0, 0.5);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s linear;
+
+  .drawer {
+    width: 500px;
+    height: 100%;
+    padding: 8px;
+    background: #fff;
+    transition: transform 1s linear;
+    transform: translateX(-500px);
+
+    .close {
+      border-bottom: 1px solid #000;
+      padding-bottom: 16px;
+      margin-bottom: 8px;
+      display: grid;
+      justify-content: flex-end;
+    }
+  }
+
+
+  &.open {
+    right: 0;
+    opacity: 1;
+    z-index: 10;
+    .drawer {
+      transform: translateX(0);
+    }
+  }
+}
+

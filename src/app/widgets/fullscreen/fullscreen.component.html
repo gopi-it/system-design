@@ -1,0 +1,16 @@
+@if(error()) {
+  <p>{{error()}}</p>
+} @else {
+  <div class="window" #windowEl >
+    <div class="window__controls">
+      @if(!onFullScreen()) {
+        <button (click)="maximixe()">🗖</button>
+      } @else {
+        <button (click)="closeFullSceen()">❎</button>
+      }
+    </div>
+    <div class="window__content">
+      Fullscreen content goes here
+    </div>
+  </div>
+}

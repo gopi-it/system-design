@@ -1,0 +1,17 @@
+<button (click)="toggleDrawer()">
+  Show Drawer
+</button>
+
+
+<div class="overlay" [ngClass]="{'open': showDrawer()}">
+  <div class="drawer">
+
+      <div class="close">
+        <button (click)="toggleDrawer()">Close</button>
+      </div>
+      <div>
+        Drawer content shown here
+      </div>
+
+  </div>
+</div>
