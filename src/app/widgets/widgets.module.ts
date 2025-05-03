@@ -25,6 +25,8 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { ShimmerUiComponent } from './shimmer-ui/shimmer-ui.component';
 import { FullscreenComponent } from './fullscreen/fullscreen.component';
 import { DrawerComponent } from './drawer/drawer.component';
+import { SliderCarouselComponent } from './carousel/slider-carousel/slider-carousel.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { DrawerComponent } from './drawer/drawer.component';
     ShimmerUiComponent,
     FullscreenComponent,
     DrawerComponent,
+    SliderCarouselComponent,
+    NotificationComponent,
   ],
   imports: [
     CommonModule,

@@ -80,6 +80,10 @@ export const WIDGETS_MENU: MenuRoutes[] = [
     label: 'Drawer',
     path: 'drawer',
   },
+  {
+    label: 'Notification',
+    path: 'notification',
+  },
 ].map((menu) => ({
   ...menu,
   path: `/widgets/${menu.path}`,

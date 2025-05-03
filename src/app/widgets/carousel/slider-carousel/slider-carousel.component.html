@@ -1,0 +1,12 @@
+<div class="window">
+  <div class="slider" #slider [ngStyle]="{'transform': position()}">
+    <div class="item" style="--color: red">1</div>
+    <div class="item" style="--color: green">2</div>
+    <div class="item" style="--color: yellow">3</div>
+  </div>
+</div>
+
+<div class="controls">
+  <div><button (click)="previous()" [disabled]="activeItem() === 0">Previous</button></div>
+  <div><button (click)="next()" [disabled]="activeItem() === (totalItems-1)">Next</button></div>
+</div>

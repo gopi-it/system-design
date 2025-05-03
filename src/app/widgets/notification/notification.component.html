@@ -1,0 +1,11 @@
+
+<p style="font-weight: 600; background-color: yellow;width: max-content; margin-bottom: 20px;">Make sure your browser and computer allows notifications</p>
+@if(hasAccess()) {
+  <div style="margin-top: 20px;">
+    <button (click)="sendNotification()">Send Notification</button>
+  </div>
+} @else {
+  <div>
+    <button (click)="grantNotification()">Grant Notification</button>
+  </div>
+}

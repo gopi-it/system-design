@@ -20,6 +20,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { ShimmerUiComponent } from './shimmer-ui/shimmer-ui.component';
 import { FullscreenComponent } from './fullscreen/fullscreen.component';
 import { DrawerComponent } from './drawer/drawer.component';
+import { NotificationComponent } from './notification/notification.component';
 
 const routes: Routes = [
   {
@@ -106,6 +107,10 @@ const routes: Routes = [
       {
         path: 'drawer',
         component: DrawerComponent,
+      },
+      {
+        path: 'notification',
+        component: NotificationComponent,
       },
     ],
   },
